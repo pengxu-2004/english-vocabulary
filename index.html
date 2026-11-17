@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#214e40">
+  <meta name="description" content="输入中文意思，查询指定 Unit 2 与 Unit 3 PDF 中出现的英文单词和词组，并查看原文出处。">
+  <title>词有所寻 · Unit 2 & 3 英语反向查询</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="./" aria-label="词有所寻首页"><span class="brand-icon" aria-hidden="true">词</span><span>词有所寻 <small>VOCABULARY FINDER</small></span></a><a class="source-link" href="#about">关于词库 <span aria-hidden="true">↗</span></a></header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow"><span></span> UNIT 2 · TECHNOLOGY <i>/</i> UNIT 3 · IDENTITY</p>
+      <h1 id="title">记得意思，<br class="mobile-break">找到<span>那个英文。</span></h1>
+      <p class="subtitle">输入中文，查找这两份 PDF 中出现的单词与词组。<br>每个结果，都有原文可循。</p>
+    </section>
+    <section class="search-panel" aria-label="词汇查询">
+      <form id="search-form" role="search">
+        <label for="query" class="sr-only">输入中文意思或英文</label>
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <input id="query" type="search" placeholder="输入中文意思，例如：隐私、创造力、转折点" autocomplete="off" maxlength="120" disabled>
+        <button id="submit" type="submit" disabled>查找英文 <span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="search-bottom"><div class="units" role="group" aria-label="筛选单元"><button class="unit active" data-unit="all" aria-pressed="true">全部单元</button><button class="unit" data-unit="2" aria-pressed="false">Unit 2 <span>Technology</span></button><button class="unit" data-unit="3" aria-pressed="false">Unit 3 <span>Identity</span></button></div><span class="local-note"><span aria-hidden="true">◌</span> 查询在浏览器内完成</span></div>
+    </section>
+    <div class="suggestions"><span>试着搜</span><button data-query="虚拟现实">虚拟现实</button><button data-query="改变">改变</button><button data-query="好奇心">好奇心</button><button data-query="转瞬间">转瞬间</button></div>
+    <section class="results-section" aria-labelledby="results-heading">
+      <div class="results-header"><div><p class="eyebrow" id="result-kicker">从一个意思开始</p><h2 id="results-heading">词汇拾页</h2></div><label class="scope-label">释义范围 <select id="scope"><option value="all">全部释义</option><option value="reviewed">教材与语境补充</option><option value="pdf">仅教材原有释义</option></select></label></div>
+      <p id="status" class="status" role="status" aria-live="polite">正在加载词库…</p>
+      <div id="results" class="results"></div>
+      <button id="more" class="more" hidden>显示更多结果</button>
+      <p class="results-footnote" id="footnote" hidden>结果按匹配程度排序。同一个意思可能对应多个表达；请结合原文判断。</p>
+    </section>
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-top"><div><p class="eyebrow">只在你的资料里找</p><h2 id="about-title">有范围，也有出处。</h2></div><div class="corpus-stats"><div><strong>02</strong><span>指定 PDF</span></div><div><strong>25</strong><span>实际页面</span></div><div><strong id="entry-count">—</strong><span>英文表达</span></div></div></div>
+      <div class="about-columns"><div><h3>不仅是单词表</h3><p>收录正文、问题、练习、词表、技能框和脚注中的英文。来源页码均为 PDF 页序，从第 1 页开始。</p></div><div><h3>释义分清来源</h3><p><b class="legend-original">教材原释义</b> 来自 PDF。<b>语境补充</b> 是按原文整理的中文。<b>词典补充</b> 提供常见义，需结合上下文判断。</p></div><div><h3>尊重文件的边界</h3><p>两份 PDF 的教材页码不连续，不包含完整听看逐字稿。原图裁切或无法辨认处保留缺损说明，不猜补内容。</p></div></div>
+      <details class="coverage"><summary>查看资料覆盖与数据说明 <span aria-hidden="true">＋</span></summary><div id="coverage-content">正在加载资料说明…</div></details>
+    </section>
+  </main>
+  <footer><span>词有所寻 <i>·</i> UNIT 2 & 3</span><span>从中文出发，回到原文。</span></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
